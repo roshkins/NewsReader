@@ -1,0 +1,12 @@
+<h2><a href="<%= feed.escape("url") %>"><%= feed.escape("title") %> </a></h2>
+
+
+<a href="#/feeds/<%= feed.id %>/entries">refresh</a>
+
+<ul>
+<% feed.get("entries").each(function(entry) { %>
+	<li>
+<a href="<%= entry.escape("link") %>"><%= entry.escape("title") %></a></li>
+<% }); %>
+
+</ul>
